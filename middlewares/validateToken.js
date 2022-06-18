@@ -10,7 +10,12 @@ const validateToken = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET)
-    req.user = decoded
+    req.user = {
+      _id: decoded._id,
+      username: decoded.username,
+      roles: decoded.roles,
+      email: decoded.email
+    }
     next()
 
   } catch (error) {
