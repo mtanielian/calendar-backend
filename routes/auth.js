@@ -5,6 +5,10 @@ const validationRoute = require('../middlewares/validateRoutes')
 const validateToken = require('../middlewares/validateToken')
 const router = Router()
 
+/**
+ * Route: '/auth'
+ */
+
 
 router.post('/login', [
   check('email', 'The email is required').isEmail(),
