@@ -11,8 +11,8 @@ app.use( express.json() )
 app.use( cors() )
 
 // Routes
-app.use('/auth', require('./routes/auth'))
-app.use('/event', require('./routes/event'))
+app.use('/api/auth', require('./routes/auth'))
+app.use('/api/event', require('./routes/event'))
 
 
 const { PORT } = process.env

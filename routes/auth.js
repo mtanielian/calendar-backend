@@ -6,7 +6,7 @@ const validateToken = require('../middlewares/validateToken')
 const router = Router()
 
 /**
- * Route: '/auth'
+ * Route: '/api/auth'
  */
 
 
@@ -23,7 +23,7 @@ router.post('/logout', [
   validationRoute
 ], logoutUser)
 
-router.get('/register',  [
+router.post('/register',  [
   check('username', 'The username is required').not().isEmpty(),
   check('email', 'The email is required').isEmail(),
   check('password', 'The password is required (+6 characters)').isLength({ min: 6 }),

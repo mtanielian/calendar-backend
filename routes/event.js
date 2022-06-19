@@ -7,7 +7,7 @@ const { createEvent, getEvents, getEventById, updateEvent, deleteEvent } = requi
 const router = Router()
 
 /**
- * Route: '/events'
+ * Route: '/api/event'
  */
 
 router.post('/', [
