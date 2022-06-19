@@ -16,8 +16,8 @@ const createEvent = async (req, res) => {
 
 const getEvents = async (req, res) => { 
   try {
-    const events = await EventModel.find({}).populate('user', 'username email')
-    return res.status(200).json(events)
+    const events = await EventModel.find({}).populate('user', 'username email').lean()
+    return res.status(200).json(JSON.parse(JSON.stringify(events)))
   } catch (error) {
     console.log('getEvents Error: ', error)
     return res.status(500).json({ msg: 'Server Error' })
